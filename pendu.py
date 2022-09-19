@@ -40,12 +40,12 @@ class Jeu:
 
     def __init__(self, mot_a_deviner):
         self.mot_a_deviner = mot_a_deviner
-        self.vie = int(len(self.mot_a_deviner.mot) * 0.7)
+        self.vie = int(len(self.mot_a_deviner.mot) * 0.6)
         if self.vie <= 1:
             self.vie = 3
 
     def lancer(self):
-        pluriel = ""
+        pluriel = "s" if self.vie > 1 else ""
         for i in range(50):
             print()
         print(self.mot_a_deviner.mot_cache)
@@ -62,11 +62,11 @@ class Jeu:
             print()
         print()
         if self.vie > 0:
-            print("Bravo vous avez Gagner la partie")
+            print("Bravo vous avez gagné(e) la partie")
         else:
             print("Vous avez perdu !")
 
-        print("Le mot a retrouver était :", self.mot_a_deviner.mot)
+        print("Le mot à retrouver était :", self.mot_a_deviner.mot)
         print()    
 
 
